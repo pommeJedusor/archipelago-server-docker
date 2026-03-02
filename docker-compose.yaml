@@ -1,0 +1,11 @@
+name: archipelago_server
+services:
+  archipelago_server:
+    volumes:
+      - ./host.yaml:/archipelago/Archipelago/host.yaml
+      - ./Players/:/archipelago/Archipelago/Players/
+      - ./custom_worlds:/archipelago/Archipelago/custom_worlds/
+      - ./output:/archipelago/Archipelago/output/
+    ports:
+      - 38281:38281
+    image: pommejedusor/archipelago_server:latest
