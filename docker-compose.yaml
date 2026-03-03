@@ -9,3 +9,7 @@ services:
     ports:
       - 38281:38281
     image: pommejedusor/archipelago_server:latest
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
