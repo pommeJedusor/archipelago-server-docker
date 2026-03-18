@@ -23,6 +23,11 @@ async def handler(websocket):
         CLIENTS.discard(websocket)
 
 
+async def update_data():
+    for client in CLIENTS:
+        await client.send(json.dumps(ARCHIPELAGO_DATA[0]))
+
+
 async def web_socket_server(archipelago_data: list):
     global ARCHIPELAGO_DATA
     ARCHIPELAGO_DATA = archipelago_data
