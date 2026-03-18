@@ -13,3 +13,14 @@ services:
       restart_policy:
         condition: on-failure
         delay: 5s
+
+  archipelago_api:
+    volumes:
+      - ./output:/app/output/
+    ports:
+      - 8765:8765
+    image: pommejedusor/archipelago_api:latest
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s

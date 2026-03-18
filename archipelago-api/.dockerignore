@@ -1,9 +1,15 @@
 # python
 **/__pycache__/**
-**/.venv/**
+.venv
+
+# git
+.gitignore
+.git
+
+# docker
+docker-compose.yaml
 
 # archipelago data
 host.yaml
 Players/
-custom_worlds/
 output/
