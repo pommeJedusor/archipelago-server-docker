@@ -43,4 +43,21 @@ def get_players_from_apsave_data(data, players):
                 player["last_activity"] = round(last_activity)
                 break
 
+    # hints
+    for (team, slot), hints in data["hints"].items():
+        for player in players:
+            if player["team"] == team and player["slot"] == slot:
+                player["hints"] = [
+                    {
+                        "receiving_player": hint.receiving_player,
+                        "location": hint.location,
+                        "item": hint.item,
+                        "found": hint.found,
+                        "item_flags": hint.item_flags,
+                        "status": int(hint.status),
+                    }
+                    for hint in hints
+                ]
+                break
+
     return players
