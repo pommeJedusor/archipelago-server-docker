@@ -56,6 +56,7 @@ def get_players_from_apsave_data(data, players):
                         "found": hint.found,
                         "item_flags": hint.item_flags,
                         "status": int(hint.status),
+                        "entrance": hint.entrance,
                     }
                     for hint in hints
                 ]
