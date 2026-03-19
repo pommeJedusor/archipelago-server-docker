@@ -50,6 +50,7 @@ def get_players_from_apsave_data(data, players):
                 player["hints"] = [
                     {
                         "receiving_player": hint.receiving_player,
+                        "finding_player": hint.finding_player,
                         "location": hint.location,
                         "item": hint.item,
                         "found": hint.found,
