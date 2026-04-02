@@ -3,15 +3,6 @@ from web_socket import update_data, web_socket_server
 from ArchipelagoData import ArchipelagoData, get_apsave_file_path, load_apsave
 
 
-def print_save_data(save_data, depth=0):
-    for key, value in save_data.items():
-        if type(value) == dict:
-            print("  " * depth, key, ":")
-            print_save_data(save_data[key], depth + 1)
-        else:
-            print("  " * depth, key, value)
-
-
 async def detect_data_update(
     apsave_file_path: str, archipelago_data: ArchipelagoData, interval: int = 1
 ):

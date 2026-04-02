@@ -9,6 +9,15 @@ from pathlib import Path
 OUTPUT_PATH = "./output"  # must not end with a '/'
 
 
+def print_save_data(save_data, depth=0):
+    for key, value in save_data.items():
+        if type(value) == dict:
+            print("  " * depth, key, ":")
+            print_save_data(save_data[key], depth + 1)
+        else:
+            print("  " * depth, key, value)
+
+
 def get_hash_from_json(data: dict) -> str:
     return hashlib.sha256(json.dumps(data).encode("utf8")).hexdigest()
 
